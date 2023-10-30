@@ -96,7 +96,7 @@
 	            <a href="#s1">分类</a>
 	                    <ul class="submenu">
 	                        <li>
-	                        <a class="category-link" href="/categories/Algorithm/">Algorithm</a></li><li><a class="category-link" href="/categories/%E5%BC%82%E5%B8%B8/">异常</a></li><li><a class="category-link" href="/categories/%E9%85%8D%E7%BD%AE/">配置</a>
+	                        <a class="category-link" href="/categories/Algorithm/">Algorithm</a></li><li><a class="category-link" href="/categories/%E5%BC%82%E5%B8%B8/">异常</a></li><li><a class="category-link" href="/categories/%E9%85%8D%E7%BD%AE/">配置</a></li><li><a class="category-link" href="/categories/%E9%A1%B9%E7%9B%AE/">项目</a>
 	                    </ul>
 	        </li>
 	        
@@ -156,13 +156,12 @@
             </div>
             <!-- Post -->
             <div class="typo" style="padding: 3rem;">
-                <p>问题：</p>
-<p>电脑突然关机，重启后打开虚拟机出现以下报错：另一个程序已锁定文件的一部分，进程无法访问打不开磁盘“D:\old\VMware\鼓励删除\gulishangcheng.vmdk”或它所依赖的某个快照磁盘。</p>
+                <h5 id="一、问题："><a href="#一、问题：" class="headerlink" title="一、问题："></a>一、问题：</h5><p>电脑突然关机，重启后打开虚拟机出现以下报错：另一个程序已锁定文件的一部分，进程无法访问打不开磁盘“D:\old\VMware\鼓励删除\gulishangcheng.vmdk”或它所依赖的某个快照磁盘。</p>
 <p>这是因为虚拟机未正常关闭，突然断电，会产生锁文件，以“.lck”结尾的文件和文件夹，避免系统崩溃。</p>
 <p><img src="/Linux%E5%BC%82%E5%B8%B8/image-20231029161716150.png" alt="image-20231029161716150"></p>
 <p>解决：</p>
 <p>删除路径文件下的所有以“.lck”结尾的文件即可解除锁定。<img src="/Linux%E5%BC%82%E5%B8%B8/image-20231029162042566.png" alt="image-20231029162042566"></p>
-<p>克隆虚拟机之后虽然ip地址变了，但是连接不上（ping不通）</p>
+<h5 id="二、问题："><a href="#二、问题：" class="headerlink" title="二、问题："></a>二、问题：</h5><p>克隆虚拟机之后虽然ip地址变了，但是连接不上（ping不通）</p>
 <p><img src="/Linux%E5%BC%82%E5%B8%B8/image-20231029172321587.png" alt="image-20231029172321587"></p>
 <p>原因:</p>
 <p>克隆是将源主机丝毫不差的复制一台新主机出来，所以他的网络配置文件也是一模一样，这就造成了一个严重的问题，就是两台主机的mac地址一模一样</p>

@@ -1,0 +1,330 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<link rel="bookmark"  type="image/x-icon"  href="/img/logo_miccall.png"/>
+	<link rel="shortcut icon" href="/img/logo_miccall.png">
+	
+			    <title>
+    Stress's blog
+    </title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="/css/mic_main.css" />
+    <link rel="stylesheet" href="/css/dropdownMenu.css" />
+    <meta name="keywords" content="miccall" />
+    
+    	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+	 
+    <noscript>
+        <link rel="stylesheet" href="/css/noscript.css" />
+    </noscript>
+    <style type="text/css">
+        body:before {
+          content: ' ';
+          position: fixed;
+          top: 0;
+          background: url('/img/bg.jpg') center 0 no-repeat;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background-size: cover; 
+        }
+    </style>
+
+			    
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script async type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.scrollex.min.js"></script>
+    <script src="/js/jquery.scrolly.min.js"></script>
+    <script src="/js/skel.min.js"></script>
+    <script src="/js/util.js"></script>
+    <script src="/js/main.js"></script>
+	
+<meta name="generator" content="Hexo 6.3.0"></head>
+    
+		
+<!-- Layouts -->
+
+
+
+<!--  代码渲染  -->
+<link rel="stylesheet" href="/css/prism_coy.css" />
+<link rel="stylesheet" href="/css/typo.css" />
+<!-- 文章页 -->
+<body class="is-loading">
+    <!-- Wrapper 外包 s-->
+    <div id="wrapper" class="fade-in">
+        <!-- Intro 头部显示 s -->
+        <!-- Intro 头部显示 e -->
+        <!-- Header 头部logo start -->
+        <header id="header">
+    <a href="/" class="logo">Stress</a>
+</header>
+        <!-- Nav 导航条 start -->
+        <nav id="nav" class="special" >
+            <ul class="menu links" >
+			<!-- Homepage  主页  --> 
+			<li >
+	            <a href="/" rel="nofollow">主页</a>
+	        </li>
+			<!-- categories_name  分类   --> 
+	        
+	        <li class="active">
+	            <a href="#s1">分类</a>
+	                    <ul class="submenu">
+	                        <li>
+	                        <a class="category-link" href="/categories/Algorithm/">Algorithm</a></li><li><a class="category-link" href="/categories/%E5%BC%82%E5%B8%B8/">异常</a></li><li><a class="category-link" href="/categories/%E9%85%8D%E7%BD%AE/">配置</a></li><li><a class="category-link" href="/categories/%E9%A1%B9%E7%9B%AE/">项目</a>
+	                    </ul>
+	        </li>
+	        
+	        <!-- archives  归档   --> 
+	        
+	        
+		        <!-- Pages 自定义   -->
+		        
+		        <li>
+		            <a href="/about/" title="简历">
+		                简历
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/group/" title="团队">
+		                团队
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/gallery/" title="图库">
+		                图库
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/tag/" title="标签">
+		                标签
+		            </a>
+		        </li>
+		        
+
+
+            </ul>
+            <!-- icons 图标   -->
+			<ul class="icons">
+                    
+                    <li>
+                        <a title="github" href="https://github.com/miccall" target="_blank" rel="noopener">
+                            <i class="icon fa fa-github"></i>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a title="500px" href="http://500px.com" target="_blank" rel="noopener">
+                            <i class="icon fa fa-500px"></i>
+                        </a>
+                    </li>
+                    
+			</ul>
+</nav>
+
+        <div id="main" >
+            <div class ="post_page_title_img" style="height: 25rem;background-image: url(/pic/3.png);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >(用户表设计</h2></a>
+            </div>
+            <!-- Post -->
+            <div class="typo" style="padding: 3rem;">
+                <p>j</p>
+<p>在明确了项目的目标和规划、技术栈的选择之后，进入了需求和设计阶段。而每个应用&#x2F;网站立项动工考虑的第一个功能，一般就是用户登录功能；所以我要做的第一件事情，就是设计登录功能——用户表结构的设计。</p>
+<p>在后台架构设计中，用户表结构是整个系统的基石。这是因为它直接影响到后续需求的实现和系统的稳定性。设计一个具有可拓展性且稳定的用户表结构，以便在后续需求跟进过程中能够应对各种变化，减少反复修改用户表的次数和成本。</p>
+<h3 id="用户表设计"><a href="#用户表设计" class="headerlink" title="用户表设计"></a>用户表设计</h3><blockquote>
+<p>一个系统中，用户模块是最基础也是最重要的。如果只考虑一种登录方式，那用户表可以用一张<code>users</code>表搞定一切。但是现实情况是现在越来越多的产品都实现了在不同平台上的功能支持，即登录方式有很多种，比如：<code>账号密码登录</code>，<code>微信、QQ、微博登录</code>，<code>手机号、邮箱登录</code>。而且一个用户可以使用<code>账号密码登录</code>之后再关联<code>微信、QQ、微博</code>，之后可以直接使用<code>微信、QQ、微博</code>登录。那么如何保证设计<code>用户表</code>将变得至关重要。</p>
+</blockquote>
+<p>在数据库设计中，如何组织用户表（或用户相关的数据）与第三方数据表的结构取决于项目需求和数据模型的复杂性。以下是三种不同的方法：</p>
+<h4 id="方式1-用户表与第三方用户表同为一张表"><a href="#方式1-用户表与第三方用户表同为一张表" class="headerlink" title="方式1: 用户表与第三方用户表同为一张表"></a>方式1: 用户表与第三方用户表同为一张表</h4><p>设计：将我方用户和第三方用户的数据都存储在同一个表中，使用字段来区分用户的来源。</p>
+<ul>
+<li><p>优点：</p>
+<ul>
+<li>简单：单一表结构，易于管理。</li>
+<li>查询简单：用户数据存储在一个表中，查询和维护相对容易。</li>
+<li>减少关联：不需要额外的关联表来连接不同用户来源的数据。</li>
+</ul>
+</li>
+<li><p>缺点：</p>
+<ul>
+<li>冗余：存储重复的数据，可能会浪费存储空间。</li>
+<li>数据一致性：难以确保数据一致性，因为相同用户可能在不同地方有不同的记录。</li>
+<li>难以扩展：如果需要添加更多用户来源，可能需要修改表结构。</li>
+</ul>
+</li>
+</ul>
+<h4 id="方式2-我方用户表一张表，第三方用户表一张表"><a href="#方式2-我方用户表一张表，第三方用户表一张表" class="headerlink" title="方式2: 我方用户表一张表，第三方用户表一张表"></a>方式2: 我方用户表一张表，第三方用户表一张表</h4><p>设计：将我方用户数据和第三方用户数据存储在两张不同的表中，每张表分别包含相应来源的用户数据。</p>
+<ul>
+<li><p>优点：</p>
+<ul>
+<li>数据分离：不会出现数据冗余，每张表只包含特定来源的用户数据。</li>
+<li>数据一致性：易于维护数据一致性，因为每张表独立管理。</li>
+<li>灵活扩展：添加新用户来源时，只需创建新的表。</li>
+</ul>
+</li>
+<li><p>缺点： </p>
+<ul>
+<li>复杂查询：需要使用联接操作来合并来自不同表的数据，可能会导致性能开销。</li>
+<li>需要额外关联表：可能需要一个关联表来管理用户与其来源之间的关系。</li>
+</ul>
+</li>
+</ul>
+<h4 id="方式3-我方用户表一张表，第三方用户表多张表"><a href="#方式3-我方用户表一张表，第三方用户表多张表" class="headerlink" title="方式3: 我方用户表一张表，第三方用户表多张表"></a>方式3: 我方用户表一张表，第三方用户表多张表</h4><p>设计：将我方用户数据存储在一张表中，而不同的第三方用户数据存储在各自的表中。</p>
+<ul>
+<li><p>优点：</p>
+<ul>
+<li>数据分离：不会出现数据冗余，每个第三方来源都有其独立的表。</li>
+<li>高度扩展：添加新用户来源时，只需创建新的表，不会影响现有数据表的结构。</li>
+<li>性能：查询来自特定来源的数据时效率较高。</li>
+</ul>
+</li>
+<li><p>缺点：</p>
+<ul>
+<li>复杂查询：需要使用联接操作来合并来自不同表的数据。</li>
+<li>需要额外关联表：可能需要一个关联表来管理用户与其来源之间的关系。</li>
+<li>数据管理复杂性：需要在不同表之间维护数据一致性。</li>
+</ul>
+</li>
+</ul>
+<p>方式1最简单，但可能浪费存储空间和难以维护一致性。方式2和方式3在数据一致性和扩展性方面更有优势，但需要额外的关联操作。方式3尤其适合当用户来源多且需要高度扩展性时。要根据项目的具体情况来选择最合适的数据库设计方式。</p>
+<p>此处我使用方式二，即<strong>我方用户表一张表，第三方用户表一张表</strong>。暂时不用太多的第三方登录入口，本身使用手机号登录，再加上两个第三方登录入口（微信和QQ：国民两大流量入口）。</p>
+<p>用户表设计</p>
+<p><code>FIFA_users</code>表设计</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE users(</span><br><span class="line">    `id` INT not null PRIMARY KEY AUTO_INCREMENT COMMENT &#x27;主键&#x27;,</span><br><span class="line">    `username` VARCHAR(10) NOT NULL COMMENT &#x27;用户名&#x27;,</span><br><span class="line">    `age` INT COMMENT &#x27;年龄&#x27;,</span><br><span class="line">    `mobile` VARCHAR(11) NOT NULL UNIQUE COMMENT &#x27;手机号&#x27;,</span><br><span class="line">    `password` VARCHAR(10) NOT NULL COMMENT &#x27;密码&#x27;,</span><br><span class="line">    `flag` BOOLEAN COMMENT&#x27;用户状态&#x27;,</span><br><span class="line">    `create_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT &#x27;注册时间&#x27;</span><br><span class="line">) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT&#x27;用户信息表&#x27;;</span><br></pre></td></tr></table></figure>
+
+<p>user_auths表设计</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE user_auths(</span><br><span class="line">    `auths_id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY COMMENT &#x27;主键&#x27;,</span><br><span class="line">		`user_id` INT NOT NULL COMMENT &#x27;用户id&#x27;,</span><br><span class="line">    `type` INT NOT NULL COMMENT &#x27;登录类型&#x27;,</span><br><span class="line">    `bind_flag` INT NOT NULL COMMENT &#x27;标识&#x27;,</span><br><span class="line">    `create_date` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT &#x27;绑定时间&#x27;</span><br><span class="line">		)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT &#x27;用户授权信息表&#x27;;</span><br></pre></td></tr></table></figure>
+
+
+            </div>
+
+            <!-- Post Comments -->
+            
+    <!-- 使用 DISQUS_CLICK -->
+<div id="disqus-comment">
+    <div id="disqus_thread"></div>
+
+<!-- add animation -->
+<style>
+	.disqus_click_btn {
+            line-height: 30px;
+            margin: 0;
+            min-width: 50px;
+            padding: 0 14px;
+            display: inline-block;
+            font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0;
+            overflow: hidden;
+            will-change: box-shadow;
+            transition: box-shadow .2s cubic-bezier(.4, 0, 1, 1), background-color .2s cubic-bezier(.4, 0, .2, 1), color .2s cubic-bezier(.4, 0, .2, 1);
+            outline: 0;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            vertical-align: middle;
+            border: 0;
+            background: rgba(158, 158, 158, .2);
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+            color: #fff;
+            background-color: #7EC0EE;
+            text-shadow: 0
+        }
+</style>
+	
+<div class="btn_click_load" id="disqus_bt"> 
+    <button class="disqus_click_btn">点击查看评论</button>
+</div>
+
+<!--
+<script type="text/javascript">
+$('.btn_click_load').click(function() {
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'http-miccall-tech'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    document.getElementById('disqus_bt').style.display = "none";
+});
+</script>
+-->
+<script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'https://stress1110.github.io/%E7%94%A8%E6%88%B7%E8%A1%A8%E8%AE%BE%E8%AE%A1/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'https://stress1110.github.io/%E7%94%A8%E6%88%B7%E8%A1%A8%E8%AE%BE%E8%AE%A1/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+</script>
+
+<script type="text/javascript">
+    $('.btn_click_load').click(function() {  //click to load comments
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document;
+            var s = d.createElement('script');
+            s.src = '//http-miccall-tech.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', + new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+        $('.btn_click_load').css('display','none');
+    });
+</script>
+</div>
+<style>
+    #disqus-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+
+        </div>
+        <!-- Copyright 版权 start -->
+                <div id="copyright">
+            <ul>
+                <li>&copy;Powered By <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/" style="border-bottom: none;">hexo</a></li>
+                <li>Design: <a target="_blank" rel="noopener" href="http://miccall.tech " style="border-bottom: none;">miccall</a></li>
+            </ul>
+            
+                <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+			
+        </div>
+    </div>
+</body>
+
+
+
+ 	
+</html>
