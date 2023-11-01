@@ -157,10 +157,113 @@
             <!-- Post -->
             <div class="typo" style="padding: 3rem;">
                 <h1 id="SpringBoot接口返回结果及异常统一处理"><a href="#SpringBoot接口返回结果及异常统一处理" class="headerlink" title="SpringBoot接口返回结果及异常统一处理"></a>SpringBoot接口返回结果及异常统一处理</h1><p>现如今前后端分离已经是项目开发的主流方式，在前后端分离开发情形下，少不了前端和后端之间的友好交流，为了避免上升为<strong>物理交流</strong>，项目中必须要有一套规范有效的前后端协议格式。</p>
-<p><img src="/SpringBoot%E6%8E%A5%E5%8F%A3%E8%BF%94%E5%9B%9E%E7%BB%93%E6%9E%9C%E5%8F%8A%E5%BC%82%E5%B8%B8%E7%BB%9F%E4%B8%80%E5%A4%84%E7%90%86/9Y4yZ.jpg" alt="9Y4yZ"></p>
+<p><img src="/SpringBoot%E6%8E%A5%E5%8F%A3%E8%BF%94%E5%9B%9E%E7%BB%93%E6%9E%9C%E5%8F%8A%E5%BC%82%E5%B8%B8%E7%BB%9F%E4%B8%80%E5%A4%84%E7%90%86/9Y4yZ-1698832555335-3.jpg" alt="9Y4yZ"></p>
 <p>后端开发的不同服务、不同业务处理并返回不同类型的数据，这不仅会增加巨大工作量来进行协议的输出，数据格式的多样化对于前端同事来讲也是一个灾难，这就需要对后端服务接口的返回格式定义成统一规范的结果类型。所以，前后端开发过程中数据交互规范化是一件非常重要的事情，不仅可以减少前后端交互过程中出现的问题，也让代码逻辑更加具有条理。</p>
 <p>因此，在项目的开始，需要对进行<strong>返回结果封装及异常统一处理</strong>，虽说封不封装都能用，但是项目前后端分离，<strong>规范的数据传输格式，让REST风格的API具有简单、易读、易用的特点</strong>。</p>
-<h4 id="1-统一接口返回结果"><a href="#1-统一接口返回结果" class="headerlink" title="1. 统一接口返回结果"></a>1. 统一接口返回结果</h4><h4 id="2-配置全局异常处理"><a href="#2-配置全局异常处理" class="headerlink" title="2. 配置全局异常处理"></a>2. 配置全局异常处理</h4>
+<h2 id="一、统一接口返回结果"><a href="#一、统一接口返回结果" class="headerlink" title="一、统一接口返回结果"></a>一、统一接口返回结果</h2><p>前端接口请求后台端，后端将返回结果<strong>统一封装</strong>。提高交互的<strong>规范性</strong>及<strong>通用性</strong>，也提高了前后端<strong>联调效率</strong>。前端根据规范格式返回结构体进行统一映射处理，就避免一个接口一个返回格式的问题。</p>
+<h4 id="1-统一封装结果包含如下参数"><a href="#1-统一封装结果包含如下参数" class="headerlink" title="1.统一封装结果包含如下参数"></a>1.统一封装结果包含如下参数</h4><p>对于后端的返回数据，考虑将格式统一后返回，在开发大量后端服务接口之后，根据开发经验可以总结得到，请求一个接口时需要关注的指标有：</p>
+<ul>
+<li>响应状态码，即请求接口返回状态码，如 HTTP 请求中的 200、304、500 等状态</li>
+<li>响应结果描述，有些接口请求成功或失败需要返回描述信息供前端展示</li>
+<li>响应结果数据，大部分的接口都会返回后端获取的数据，并以列表的形式展示的前端页面中</li>
+<li>是否成功：在实际项目中请求接口时，首先要关注的应该是接口的请求是否成功，然后才会去关注成功返回数据或者错误代码和信息，在统一数据中可以加入请求是否成功的标识，当然接口的成功与否也可以根据状态码可以判断，可以根据实际需求考虑是否定义结果状态</li>
+<li>其他标识：为了显示更多接口调用的信息，可能会根据实际的业务需求加入接口调用的时间信息等。</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="type">boolean</span> code; <span class="comment">//编码：true成功，false为失败</span></span><br><span class="line"><span class="keyword">private</span> String msg; <span class="comment">//错误信息</span></span><br><span class="line"><span class="keyword">private</span> T data; <span class="comment">//数据</span></span><br><span class="line"><span class="keyword">private</span> <span class="type">Map</span> <span class="variable">map</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">HashMap</span>(); <span class="comment">//动态数据</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="2-统一封装结果包含如下方法"><a href="#2-统一封装结果包含如下方法" class="headerlink" title="2.统一封装结果包含如下方法"></a>2.统一封装结果包含如下方法</h4><p>除了以上属性特征外，返回结果类在定义时还应该满足：</p>
+<ol>
+<li>属性私有化，使用 get&#x2F;set 方法来操作属性值</li>
+<li>构造器私有化，外部只可以调用方法，初始化要在类内部完成</li>
+<li>由于外部需要直接调用方法，因此方法要定义为静态方法</li>
+</ol>
+<p>结合以上，要求给出代码；</p>
+<h4 id="3、代码实现"><a href="#3、代码实现" class="headerlink" title="3、代码实现"></a>3、代码实现</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> lombok.Data;</span><br><span class="line"><span class="keyword">import</span> java.util.HashMap;</span><br><span class="line"><span class="keyword">import</span> java.util.Map;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Data</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">R</span>&lt;T&gt; &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="type">boolean</span> code; <span class="comment">//编码：true成功，false为失败</span></span><br><span class="line">    <span class="keyword">private</span> String msg; <span class="comment">//错误信息</span></span><br><span class="line">    <span class="keyword">private</span> T data; <span class="comment">//数据</span></span><br><span class="line">    <span class="keyword">private</span> <span class="type">Map</span> <span class="variable">map</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">HashMap</span>(); <span class="comment">//动态数据</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> &lt;T&gt; R&lt;T&gt; <span class="title function_">success</span><span class="params">(T object)</span> &#123;</span><br><span class="line">        R&lt;T&gt; r = <span class="keyword">new</span> <span class="title class_">R</span>&lt;T&gt;();</span><br><span class="line">        r.data = object;</span><br><span class="line">        r.code = <span class="literal">true</span>;</span><br><span class="line">        <span class="keyword">return</span> r;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> R&lt;String&gt; <span class="title function_">error</span><span class="params">(String msg)</span> &#123;</span><br><span class="line">        R&lt;String&gt; r = <span class="keyword">new</span> <span class="title class_">R</span>&lt;&gt;();</span><br><span class="line">        r.msg = msg;</span><br><span class="line">        r.code = <span class="literal">true</span>;</span><br><span class="line">        <span class="keyword">return</span> r;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> R&lt;T&gt; <span class="title function_">add</span><span class="params">(String key, Object value)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.map.put(key, value);</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">this</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="4、参数参考："><a href="#4、参数参考：" class="headerlink" title="4、参数参考："></a>4、参数参考：</h4><ul>
+<li>状态码：code</li>
+<li>状态信息：status</li>
+<li>返回信息：message</li>
+<li>数据：data</li>
+</ul>
+<h4 id="5、方法参考："><a href="#5、方法参考：" class="headerlink" title="5、方法参考："></a>5、方法参考：</h4><ul>
+<li>全参数方法</li>
+<li>成功返回（无参）</li>
+<li>成功返回（枚举）</li>
+<li>成功返回（状态码+返回信息）</li>
+<li>成功返回（返回信息 + 数据）</li>
+<li>成功返回（状态码+返回信息+数据）</li>
+<li>成功返回（数据）</li>
+<li>成功返回（返回信息）</li>
+<li>失败返回（无参）</li>
+<li>失败返回（枚举）</li>
+<li>失败返回（状态码+返回信息）</li>
+<li>失败返回（返回信息+数据）</li>
+<li>失败返回（状态码+返回信息+数据）</li>
+<li>失败返回（数据）</li>
+<li>失败返回（返回信息）</li>
+</ul>
+<h5 id="5、状态码参考："><a href="#5、状态码参考：" class="headerlink" title="5、状态码参考："></a>5、状态码参考：</h5><p>了用以下为HTTP状态码：</p>
+<img src="../images/6-五大类HTTP状态码.png" style="zoom:50%;">
+
+<p><code>1xx</code> 类状态码属于<strong>提示信息</strong>，是协议处理中的一种中间状态，实际用到的比较少。</p>
+<p><code>2xx</code> 类状态码表示服务器<strong>成功</strong>处理了客户端的请求，也是我们最愿意看到的状态。</p>
+<ul>
+<li>「<strong>200 OK</strong>」是最常见的成功状态码，表示一切正常。如果是非 <code>HEAD</code> 请求，服务器返回的响应头都会有 body 数据。</li>
+<li>「<strong>204 No Content</strong>」也是常见的成功状态码，与 200 OK 基本相同，但响应头没有 body 数据。</li>
+<li>「<strong>206 Partial Content</strong>」是应用于 HTTP 分块下载或断点续传，表示响应返回的 body 数据并不是资源的全部，而是其中的一部分，也是服务器处理成功的状态。</li>
+</ul>
+<p><code>3xx</code> 类状态码表示客户端请求的资源发生了变动，需要客户端用新的 URL 重新发送请求获取资源，也就是<strong>重定向</strong>。</p>
+<ul>
+<li>「<strong>301 Moved Permanently</strong>」表示永久重定向，说明请求的资源已经不存在了，需改用新的 URL 再次访问。</li>
+<li>「<strong>302 Found</strong>」表示临时重定向，说明请求的资源还在，但暂时需要用另一个 URL 来访问。</li>
+</ul>
+<p>301 和 302 都会在响应头里使用字段 <code>Location</code>，指明后续要跳转的 URL，浏览器会自动重定向新的 URL。</p>
+<ul>
+<li>「<strong>304 Not Modified</strong>」不具有跳转的含义，表示资源未修改，重定向已存在的缓冲文件，也称缓存重定向，也就是告诉客户端可以继续使用缓存资源，用于缓存控制。</li>
+</ul>
+<p><code>4xx</code> 类状态码表示客户端发送的<strong>报文有误</strong>，服务器无法处理，也就是错误码的含义。</p>
+<ul>
+<li>「<strong>400 Bad Request</strong>」表示客户端请求的报文有错误，但只是个笼统的错误。</li>
+<li>「<strong>403 Forbidden</strong>」表示服务器禁止访问资源，并不是客户端的请求出错。</li>
+<li>「<strong>404 Not Found</strong>」表示请求的资源在服务器上不存在或未找到，所以无法提供给客户端。</li>
+</ul>
+<p><code>5xx</code> 类状态码表示客户端请求报文正确，但是<strong>服务器处理时内部发生了错误</strong>，属于服务器端的错误码。</p>
+<ul>
+<li>「<strong>500 Internal Server Error</strong>」与 400 类型，是个笼统通用的错误码，服务器发生了什么错误，我们并不知道。</li>
+<li>「<strong>501 Not Implemented</strong>」表示客户端请求的功能还不支持，类似“即将开业，敬请期待”的意思。</li>
+<li>「<strong>502 Bad Gateway</strong>」通常是服务器作为网关或代理时返回的错误码，表示服务器自身工作正常，访问后端服务器发生了错误。</li>
+<li>「<strong>503 Service Unavailable</strong>」表示服务器当前很忙，暂时无法响应客户端，类似“网络服务正忙，请稍后重试”的意思。</li>
+</ul>
+<h2 id="二、配置全局异常处理"><a href="#二、配置全局异常处理" class="headerlink" title="二、配置全局异常处理"></a>二、配置全局异常处理</h2><p><strong>在使用上方统一返回结果的加持下，规范的同时也不可避免程序异常情况</strong>。在日常项目开发中，异常是常见的，但是如何更高效的处理好异常信息，让我们能快速定位到BUG，是很重要的，不仅能够提高我们的开发效率，还能让你代码看上去更舒服，SpringBoot的项目已经对有一定的异常处理了，但是对于我们开发者而言可能就不太合适了，因此我们需要对这些异常进行统一的捕获并处理。</p>
+<p><img src="/SpringBoot%E6%8E%A5%E5%8F%A3%E8%BF%94%E5%9B%9E%E7%BB%93%E6%9E%9C%E5%8F%8A%E5%BC%82%E5%B8%B8%E7%BB%9F%E4%B8%80%E5%A4%84%E7%90%86/%E6%8A%9B%E5%87%BA%E5%BC%82%E5%B8%B8.jpg" alt="抛出异常"></p>
+<p><code>SpringBoot</code>中，<code>@RestControllAdvice</code>即可开启全局异常处理，使用该注解表示开启了全局异常的捕获，我们只需在自定义一个方法使用@<code>ExceptionHandler</code>注解然后定义捕获异常的类型即可对这些捕获的异常进行统一的处理。</p>
+<h3 id="1-全局异常处理注解"><a href="#1-全局异常处理注解" class="headerlink" title="1.全局异常处理注解"></a>1.全局异常处理注解</h3><h4 id="RestControllerAdvice"><a href="#RestControllerAdvice" class="headerlink" title="@RestControllerAdvice"></a><strong><code>@RestControllerAdvice</code></strong></h4><h5 id="RestControllerAdvice什么是？"><a href="#RestControllerAdvice什么是？" class="headerlink" title="@RestControllerAdvice什么是？"></a><code>@RestControllerAdvice</code>什么是？</h5><ul>
+<li><strong><code>@RestControllerAdvice注解</code><strong>是<code>Spring MVC</code>和<code>Spring Boot</code>应用程序中用于定义</strong>全局异常处理类的注解</strong>，它是<code>@ControllerAdvice</code>注解的特殊版本，是一个组合注解，<strong>由<code>@ControllerAdvice</code>、<code>@ResponseBody</code>组成</strong>。</li>
+<li><strong><code>@ControllerAdvice</code>继承了@Component</strong>，因此<code>@RestControllerAdvice</code>本质上是个组件，用于<strong>定义<code>@ExceptionHandler</code>，<code>@InitBinder</code>和@<code>ModelAttribute</code>方法，适用于所有使用<code>@RequestMapping</code>方法</strong>。</li>
+</ul>
+<h5 id="RestControllerAdvice有什么特点？"><a href="#RestControllerAdvice有什么特点？" class="headerlink" title="@RestControllerAdvice有什么特点？"></a><code>@RestControllerAdvice</code>有什么特点？</h5><ul>
+<li>注解<code>@RestControllerAdvice</code>的类的方法可以<strong>使用<code>@ExceptionHandler</code>、<code>@InitBinder</code>、<code>@ModelAttribute</code>注解到方法上</strong>。</li>
+<li><code>@RestControllerAdvice</code>注解将作用于所有<strong>注解了<code>@RequestMapping</code>的控制器的方法上</strong>。</li>
+<li><code>@ExceptionHandler</code>：用于指定异常处理方法，<strong>与<code>@RestControllerAdvice</code>配合使用时，用于全局处理控制器里的异常</strong>。</li>
+<li><code>@InitBinder</code>：用来设置<code>WebDataBinder</code>，用于自动绑定前台请求参数到Model中。</li>
+<li><code>@ModelAttribute</code>：本来作用是绑定键值对到Model中，当与<code>@ControllerAdvice</code>配合使用时，可以让全局的<code>@RequestMapping</code>都能获得在此处设置的键值对</li>
+</ul>
+<h3 id="2-ExceptionHandler常用异常拦截"><a href="#2-ExceptionHandler常用异常拦截" class="headerlink" title="2.@ExceptionHandler常用异常拦截"></a>2.<code>@ExceptionHandler</code>常用异常拦截</h3><ul>
+<li>权限校验异常：AccessDeniedException（spring-security中异常）</li>
+<li>请求方式不支持：HttpRequestMethodNotSupportedException</li>
+<li>业务异常：ServiceException（自己业务定义异常）</li>
+<li>拦截未知的运行时异常：RuntimeException</li>
+<li>系统异常：Exception</li>
+<li>自定义验证异常：BindException</li>
+<li>自定义验证异常：MethodArgumentNotValidException</li>
+</ul>
+<h3 id="3-代码实现"><a href="#3-代码实现" class="headerlink" title="3.代码实现"></a>3.代码实现</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> lombok.extern.slf4j.Slf4j;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.ExceptionHandler;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.RestControllerAdvice;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Slf4j</span></span><br><span class="line"><span class="meta">@RestControllerAdvice</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MyExceptionHandler</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@ExceptionHandler(value =Exception.class)</span></span><br><span class="line">    <span class="keyword">public</span> R&lt;String&gt; <span class="title function_">exceptionHandler</span><span class="params">(Exception e)</span>&#123;</span><br><span class="line">        log.error(e.toString(), e);</span><br><span class="line">        <span class="keyword">return</span> R.error(<span class="string">&quot;服务器异常！&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="三、总结"><a href="#三、总结" class="headerlink" title="三、总结"></a>三、总结</h2><p>本文从<strong>统一接口返回结果</strong>和<strong>配置全局异常处理</strong>两个方面出发，介绍<strong>如何优雅的封装规范后端接口输出</strong>，通过规范的数据传输格式，让REST风格的API具有简单、易读、易用详细；同时<strong>通过<code>@RestControllerAdvice</code>和<code>@ExceptionHandler</code>注解</strong>及使用方式，能够减少代码的重复度和复杂度，有利于代码的维护，并且能够快速定位到BUG，大大提高我们的开发效率。</p>
+
             </div>
 
             <!-- Post Comments -->
