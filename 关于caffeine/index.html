@@ -151,51 +151,27 @@
 </nav>
 
         <div id="main" >
-            <div class ="post_page_title_img" style="height: 25rem;background-image: url(/pic/7.jpg);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
-                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >面试（1）</h2></a>
+            <div class ="post_page_title_img" style="height: 25rem;background-image: url(/pic/8.jpg);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >关于caffeine</h2></a>
             </div>
             <!-- Post -->
             <div class="typo" style="padding: 3rem;">
-                <p>话不多说，直接进入正题：</p>
-<p>一开始先自我介绍！</p>
-<hr>
-<p>Set和Map的区别</p>
-<p>HashSet和HashTable的区别</p>
-<p>HashMap的底层数据结构（JDK1.8版本）</p>
-<p>ArrayList的扩容机制</p>
-<hr>
-<p>垃圾回收是如何进行的</p>
-<p>垃圾回收的对象是谁</p>
-<p>如果对象为null会回收吗</p>
-<hr>
-<p>了解锁升级吗</p>
-<p>阻塞的线程怎么唤醒</p>
-<p>介绍一下你熟悉的多线程</p>
-<p>如何保证多线程的安全性</p>
-<hr>
-<p>介绍一下MySQL的索引结构</p>
-<p>B+树和B树的区别</p>
-<p>InnoDB和MyIsam的区别</p>
-<p>MySQL的事务级别分为几种</p>
-<p>InnoDB的默认级别</p>
-<hr>
-<p>为什么Redis单线程还这么快</p>
-<p>RDB和AOF的区别</p>
-<p>AOF的具体执行（fork线程）</p>
-<hr>
-<p>RabbitMQ在项目中主要是用来做什么</p>
-<p>RabbitMQ的分片做过吗</p>
-<hr>
-<p>介绍一下springcloud中的熔断和降级</p>
-<p>SpringMVC的执行过程</p>
-<p>Spring中Bean的生命周期</p>
-<p>一次Spring的请求具体执行过程</p>
-<hr>
-<p>Linux会吗</p>
-<p>问的问题都听不懂，忘记问什么了</p>
-<hr>
-<p>一面面试官特别友好，面试节奏很快，每一道题感觉我支支吾吾勉强地说出几个关键点他就换了个问题，再深问可能就答不上来了。一面主要还是偏向基础。很高兴沟通了那么多公司、投了那么多简历、做了那么多笔试测评，终于获得了一次宝贵的面试经验！</p>
-<img src="/%E7%AC%AC%E4%B8%80%E6%AC%A1%E9%9D%A2%E8%AF%95/你会经常哭泣吗.jpg" alt="你会经常哭泣吗" style="zoom: 67%;">
+                <h1 id="Caffeine"><a href="#Caffeine" class="headerlink" title="Caffeine"></a>Caffeine</h1><h3 id="什么是Caffeine？"><a href="#什么是Caffeine？" class="headerlink" title="什么是Caffeine？"></a>什么是Caffeine？</h3><p>Caffeine 是一个开源的 Java 缓存库，用于提供高性能的内存缓存解决方案。它被设计用于替代 Java 标准库中的 ConcurrentHashMap，以提供更强大和灵活的缓存功能。Caffeine 的目标是提供快速、高性能的缓存，并且在多线程环境下表现出色。<br>以下是一些 Caffeine 的主要特点和优势：</p>
+<p>1.高性能：Caffeine 使用了一系列性能优化技术，包括非阻塞数据结构和内存管理，以确保快速的读写操作。它在吞吐量和响应时间方面都表现出色。<br>2.自动驱逐策略：Caffeine 支持多种驱逐策略，如基于大小、基于时间或基于访问顺序的驱逐策略。这使得可以自动清理不再需要的缓存条目，以防止内存泄漏和资源浪费。<br>3.异步加载：Caffeine 允许异步加载缓存条目，这意味着当缓存中不存在所需的数据时，可以在后台线程中加载数据，而不会阻塞主线程。<br>4.统计信息和监听器：Caffeine 提供了丰富的统计信息和监听器，可以用于监视缓存的性能和行为，以便进行调优和故障排除。<br>5.大小可调：Caffeine 允许你为缓存设置最大大小，以防止内存过度使用。你可以根据应用程序的需求来调整缓存的大小。<br>6.线程安全：Caffeine 提供了线程安全的缓存实现，适用于多线程环境。</p>
+<p>Caffeine 在许多 Java 应用程序中被广泛使用，特别是在需要高性能缓存的场景中，如Web应用程序、分布式系统、数据访问层等。它提供了一个强大而可定制的缓存解决方案，可以显著提高应用程序的性能和响应速度。</p>
+<img src="/%E5%85%B3%E4%BA%8Ecaffeine/image-20231102225624924.png" alt="image-20231102225624924" style="zoom:50%;">
+
+<p>以上是ChatGPT的回答，可以说总结的很到位了。下面我会通过阅读其他文章，更深度地讲解我所理解的Caffeine。（ps:我在项目里使用Caffeine，而且面试的时候也问了。)</p>
+<h3 id="什么时候需要使用缓存呢？"><a href="#什么时候需要使用缓存呢？" class="headerlink" title="什么时候需要使用缓存呢？"></a>什么时候需要使用缓存呢？</h3><p>一共有两种情况：</p>
+<p>1、CPU占用——缓存计算结果：查询的数据需要经过大量的或复杂的计算</p>
+<p>2、数据库I&#x2F;O占用——并发高，访问频繁：一段时间内被反复查询的数据（热点数据）</p>
+<h3 id="为什么要用Caffeine呢？"><a href="#为什么要用Caffeine呢？" class="headerlink" title="为什么要用Caffeine呢？"></a>为什么要用Caffeine呢？</h3><p>也可以从两个角度作比较：</p>
+<h4 id="1、首先是远程缓存（Redis）"><a href="#1、首先是远程缓存（Redis）" class="headerlink" title="1、首先是远程缓存（Redis）"></a>1、首先是远程缓存（Redis）</h4><p>Redis经常被用作缓存的中间件，面试被问到，“竟然有了Redis，为什么还要使用Caffeine？”</p>
+<ul>
+<li>Redis可能会挂了或者老版本的Redis（会进行全量同步），这种情况远程缓存不可用，容易造成缓存雪崩的情况</li>
+<li>网络I&#x2F;O以及序列化&#x2F;反序列化的速度不够快，毕竟作为远程的服务器，还是需要经过网络传输这个过程，且网络不一定可靠。</li>
+</ul>
+<h4 id="2、其次是本地缓存"><a href="#2、其次是本地缓存" class="headerlink" title="2、其次是本地缓存"></a>2、其次是本地缓存</h4><p>在Caffeine出现之前，都是用的什么本地缓存呢</p>
 
             </div>
 
@@ -258,8 +234,8 @@ $('.btn_click_load').click(function() {
 -->
 <script type="text/javascript">
     var disqus_config = function () {
-        this.page.url = 'https://stress1110.github.io/%E7%AC%AC%E4%B8%80%E6%AC%A1%E9%9D%A2%E8%AF%95/';  // Replace PAGE_URL with your page's canonical URL variable
-        this.page.identifier = 'https://stress1110.github.io/%E7%AC%AC%E4%B8%80%E6%AC%A1%E9%9D%A2%E8%AF%95/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        this.page.url = 'https://stress1110.github.io/%E5%85%B3%E4%BA%8Ecaffeine/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'https://stress1110.github.io/%E5%85%B3%E4%BA%8Ecaffeine/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
     };
 </script>
 
