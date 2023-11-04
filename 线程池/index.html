@@ -1,0 +1,416 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<link rel="bookmark"  type="image/x-icon"  href="/img/logo_miccall.png"/>
+	<link rel="shortcut icon" href="/img/logo_miccall.png">
+	
+			    <title>
+    Stress's blog
+    </title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="/css/mic_main.css" />
+    <link rel="stylesheet" href="/css/dropdownMenu.css" />
+    <meta name="keywords" content="miccall" />
+    
+    	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+	 
+    <noscript>
+        <link rel="stylesheet" href="/css/noscript.css" />
+    </noscript>
+    <style type="text/css">
+        body:before {
+          content: ' ';
+          position: fixed;
+          top: 0;
+          background: url('/img/bg.jpg') center 0 no-repeat;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background-size: cover; 
+        }
+    </style>
+
+			    
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script async type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.scrollex.min.js"></script>
+    <script src="/js/jquery.scrolly.min.js"></script>
+    <script src="/js/skel.min.js"></script>
+    <script src="/js/util.js"></script>
+    <script src="/js/main.js"></script>
+	
+<meta name="generator" content="Hexo 6.3.0"></head>
+    
+		
+<!-- Layouts -->
+
+
+
+<!--  代码渲染  -->
+<link rel="stylesheet" href="/css/prism_coy.css" />
+<link rel="stylesheet" href="/css/typo.css" />
+<!-- 文章页 -->
+<body class="is-loading">
+    <!-- Wrapper 外包 s-->
+    <div id="wrapper" class="fade-in">
+        <!-- Intro 头部显示 s -->
+        <!-- Intro 头部显示 e -->
+        <!-- Header 头部logo start -->
+        <header id="header">
+    <a href="/" class="logo">Stress</a>
+</header>
+        <!-- Nav 导航条 start -->
+        <nav id="nav" class="special" >
+            <ul class="menu links" >
+			<!-- Homepage  主页  --> 
+			<li >
+	            <a href="/" rel="nofollow">主页</a>
+	        </li>
+			<!-- categories_name  分类   --> 
+	        
+	        <li class="active">
+	            <a href="#s1">分类</a>
+	                    <ul class="submenu">
+	                        <li>
+	                        <a class="category-link" href="/categories/JUC/">JUC</a></li><li><a class="category-link" href="/categories/Redis/">Redis</a></li><li><a class="category-link" href="/categories/%E5%BC%82%E5%B8%B8/">异常</a></li><li><a class="category-link" href="/categories/%E9%85%8D%E7%BD%AE/">配置</a></li><li><a class="category-link" href="/categories/%E9%9D%A2%E8%AF%95/">面试</a></li><li><a class="category-link" href="/categories/%E9%A1%B9%E7%9B%AE/">项目</a>
+	                    </ul>
+	        </li>
+	        
+	        <!-- archives  归档   --> 
+	        
+	        
+		        <!-- Pages 自定义   -->
+		        
+		        <li>
+		            <a href="/about/" title="简历">
+		                简历
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/group/" title="团队">
+		                团队
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/gallery/" title="图库">
+		                图库
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/tag/" title="标签">
+		                标签
+		            </a>
+		        </li>
+		        
+
+
+            </ul>
+            <!-- icons 图标   -->
+			<ul class="icons">
+                    
+                    <li>
+                        <a title="github" href="https://github.com/miccall" target="_blank" rel="noopener">
+                            <i class="icon fa fa-github"></i>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a title="500px" href="http://500px.com" target="_blank" rel="noopener">
+                            <i class="icon fa fa-500px"></i>
+                        </a>
+                    </li>
+                    
+			</ul>
+</nav>
+
+        <div id="main" >
+            <div class ="post_page_title_img" style="height: 25rem;background-image: url(/pic/10.jpg);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >线程池</h2></a>
+            </div>
+            <!-- Post -->
+            <div class="typo" style="padding: 3rem;">
+                <h1 id="线程池"><a href="#线程池" class="headerlink" title="线程池"></a>线程池</h1><h2 id="什么是线程池？"><a href="#什么是线程池？" class="headerlink" title="什么是线程池？"></a>什么是线程池？</h2><p>计算机发展到现在，通过多核 CPU 并行计算来提升服务器的性能已经成为主流，随之出现了多线程技术。而线程作为操作系统宝贵的资源，对它的使用需要进行控制管理，线程池就是采用池化思想（类似连接池、常量池、对象池等）管理线程的工具。</p>
+<h2 id="为什么要使用线程池？"><a href="#为什么要使用线程池？" class="headerlink" title="为什么要使用线程池？"></a>为什么要使用线程池？</h2><p>使用线程池可以带来以下好处：</p>
+<blockquote>
+<ol>
+<li>降低资源消耗。降低频繁创建、销毁线程带来的额外开销，复用已创建线程</li>
+<li>降低使用复杂度。将任务的提交和执行进行解耦，我们只需要创建一个线程池，然后往里面提交任务就行，具体执行流程由线程池自己管理，降低使用复杂度</li>
+<li>提高线程可管理性。比如限制线程的个数，动态新增线程等。</li>
+<li>提高响应速度。任务到达后，直接复用已创建好的线程执行</li>
+</ol>
+</blockquote>
+<p>Java的<strong>虚拟机栈，本地方法栈，程序计数器</strong>都是线程私有的。（所有线程共享的是<strong>方法区和堆</strong>）当线程创建时，这些东西要创建出来，当线程销毁时，这些东西又要逐个销毁。因此，创建和销毁线程同样也 非常损耗性能，而且Java的线程都会影射到 操作系统底层的实际线程。</p>
+<h2 id="线程池的使用场景？"><a href="#线程池的使用场景？" class="headerlink" title="线程池的使用场景？"></a>线程池的使用场景？</h2><p>线程池的使用场景简单来说可以有：</p>
+<blockquote>
+<ol>
+<li><strong>快速响应用户请求，响应速度优先</strong>。比如一个用户请求，需要通过 RPC 调用好几个服务去获取数据然后聚合返回，此场景就可以用线程池并行调用，响应时间取决于响应最慢的那个 RPC 接口的耗时；又或者一个注册请求，注册完之后要发送短信、邮件通知，为了快速返回给用户，可以将该通知操作丢到线程池里异步去执行，然后直接返回客户端成功，提高用户体验。</li>
+<li><strong>单位时间处理更多请求，吞吐量优先</strong>。比如接受 MQ 消息，然后去调用第三方接口查询数据，此场景并不追求快速响应，主要利用有限的资源在单位时间内尽可能多的处理任务，可以利用队列进行任务的缓冲。</li>
+</ol>
+</blockquote>
+<p>基于以上使用场景，可以套到自己项目中，说下为了提升系统性能，自己对负责的系统模块使用线程池做了哪些优化，优化前后对比 Qps 提升多少、Rt 降低多少、服务器数量减少多少等等。</p>
+<h2 id="如何定义线程池？"><a href="#如何定义线程池？" class="headerlink" title="如何定义线程池？"></a>如何定义线程池？</h2><h3 id="通过-Executors-创建的线程池"><a href="#通过-Executors-创建的线程池" class="headerlink" title="通过 Executors 创建的线程池"></a>通过 <code>Executors</code> 创建的线程池</h3><ul>
+<li><code>Executors.newFixedThreadPool()</code>：创建一个固定大小的线程池，可控制并发的线程数，超出的线程会在队列中等待；</li>
+<li><code>Executors.newCachedThreadPool()</code>：创建一个可缓存的线程池，若线程数超过处理所需，缓存一段时间后会回收多余的线程，若线程数不够，则新建线程；</li>
+<li><code>Executors.newSingleThreadExecutor()</code>：创建单个线程数的线程池，它可以保证先进先出的执行顺序；</li>
+<li><code>Executors.newScheduledThreadPool()</code>：创建一个可以执行延迟任务的线程池；</li>
+<li><code>Executors.newSingleThreadScheduledExecutor()</code>：创建一个单线程的可以执行延迟任务的线程池；</li>
+<li><code>Executors.newWorkStealingPool()</code>：创建一个抢占式执行的线程池（任务执行顺序不确定）JDK 1.8 添加</li>
+</ul>
+<p>在阿里java开发手测中，对Executors有一个专门的规约：</p>
+<img src="/%E7%BA%BF%E7%A8%8B%E6%B1%A0/webp.webp" alt="img" style="zoom:67%;">
+
+<h3 id="通过-ThreadPoolExecutor-创建的线程池"><a href="#通过-ThreadPoolExecutor-创建的线程池" class="headerlink" title="通过 ThreadPoolExecutor 创建的线程池"></a>通过 <code>ThreadPoolExecutor</code> 创建的线程池</h3><h4 id="七大参数"><a href="#七大参数" class="headerlink" title="七大参数"></a>七大参数</h4><ul>
+<li><h5 id="包含核心线程数（corePoolSize）"><a href="#包含核心线程数（corePoolSize）" class="headerlink" title="包含核心线程数（corePoolSize）"></a>包含核心线程数（corePoolSize）</h5></li>
+<li><h5 id="最大线程数（maximumPoolSize）"><a href="#最大线程数（maximumPoolSize）" class="headerlink" title="最大线程数（maximumPoolSize）"></a>最大线程数（maximumPoolSize）</h5></li>
+<li><h5 id="空闲线程超时时间（keepAliveTime）"><a href="#空闲线程超时时间（keepAliveTime）" class="headerlink" title="空闲线程超时时间（keepAliveTime）"></a>空闲线程超时时间（keepAliveTime）</h5></li>
+<li><h5 id="时间单位（unit）"><a href="#时间单位（unit）" class="headerlink" title="时间单位（unit）"></a>时间单位（unit）</h5></li>
+<li><h5 id="阻塞队列（workQueue）"><a href="#阻塞队列（workQueue）" class="headerlink" title="阻塞队列（workQueue）"></a>阻塞队列（workQueue）</h5></li>
+<li><h5 id="拒绝策略（handler）"><a href="#拒绝策略（handler）" class="headerlink" title="拒绝策略（handler）"></a>拒绝策略（handler）</h5></li>
+<li><h5 id="线程工厂（ThreadFactory）"><a href="#线程工厂（ThreadFactory）" class="headerlink" title="线程工厂（ThreadFactory）"></a>线程工厂（ThreadFactory）</h5></li>
+</ul>
+<h4 id="四种拒绝策略"><a href="#四种拒绝策略" class="headerlink" title="四种拒绝策略"></a>四种拒绝策略</h4><ul>
+<li><code>AbortPolicy</code>: 丢弃任务并抛出<code>RejectedExecutionException</code>异常。(默认拒绝策略)</li>
+<li><code>DiscardPolicy</code>：丢弃任务，但是不抛出异常。</li>
+<li><code>DiscardOldestPolicy</code>：丢弃队列最前面的任务，然后重新尝试执行任务。</li>
+<li><code>CallerRunsPolicy</code>由调用方线程处理该任务。</li>
+</ul>
+<h4 id="常见工作队列"><a href="#常见工作队列" class="headerlink" title="常见工作队列"></a>常见工作队列</h4><ul>
+<li><p><code>ArrayBlockingQueue</code> ：一个数组实现的有界阻塞队列，此队列按照FIFO的原则对元素进行排序，支持公平访问队列。</p>
+</li>
+<li><p><code>LinkedBlockingQueue</code> ：一个由链表结构组成的可选有界阻塞队列，如果不指定大小，则使用Integer.MAX_VALUE作为队列大小，按照FIFO的原则对元素进行排序。</p>
+</li>
+<li><p><code>PriorityBlockingQueue</code> ：一个支持优先级排序的无界阻塞队列，默认情况下采用自然顺序排列，也可以指定Comparator。</p>
+</li>
+<li><p><code>DelayQueue</code>：一个支持延时获取元素的无界阻塞队列，创建元素时可以指定多久以后才能从队列中获取当前元素，常用于缓存系统设计与定时任务调度等。</p>
+</li>
+<li><p><code>SynchronousQueue</code>：一个不存储元素的阻塞队列。存入操作必须等待获取操作，反之亦然。</p>
+</li>
+<li><p><code>LinkedTransferQueue</code>：一个由链表结构组成的无界阻塞队列，与<code>LinkedBlockingQueue</code>相比多了transfer和tryTranfer方法，该方法在有消费者等待接收元素时会立即将元素传递给消费者。</p>
+</li>
+<li><p><code>LinkedBlockingDeque</code>：一个由链表结构组成的双端阻塞队列，可以从队列的两端插入和删除元素。</p>
+</li>
+</ul>
+<h2 id="线程池的工作流程"><a href="#线程池的工作流程" class="headerlink" title="线程池的工作流程"></a>线程池的工作流程</h2><h3 id="JUC"><a href="#JUC" class="headerlink" title="JUC"></a>JUC</h3><blockquote>
+<ol>
+<li>判断线程池的状态，如果不是RUNNING状态，直接执行拒绝策略</li>
+<li>如果当前线程数 &lt; 核心线程池，则新建一个线程来处理提交的任务</li>
+<li>如果当前线程数 &gt; 核心线程数且任务队列没满，则将任务放入阻塞队列等待执行</li>
+<li>如果 核心线程池 &lt; 当前线程池数 &lt; 最大线程数，且任务队列已满，则创建新的线程执行提交的任务</li>
+<li>如果当前线程数 &gt; 最大线程数，且队列已满，则执行拒绝策略拒绝该任务</li>
+</ol>
+</blockquote>
+<p><img src="/%E7%BA%BF%E7%A8%8B%E6%B1%A0/%E5%9B%BE%E8%A7%A3%E7%BA%BF%E7%A8%8B%E6%B1%A0%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86.png" alt="图解线程池实现原理"></p>
+<p>这个执行流程是 JUC 标准线程池提供的执行流程，主要用在 CPU 密集型场景下。</p>
+<p>像 Tomcat内部的线程池主要用来处理网络 IO 任务的，主要用在  IO 密集型场景下。</p>
+<h3 id="Tomcat"><a href="#Tomcat" class="headerlink" title="Tomcat"></a>Tomcat</h3><p>当当前线程数大于核心线程数时，JUC 原生线程池首先是把任务放到队列里等待执行，而不是先创建线程执行。</p>
+<p>如果 Tomcat 接收的请求数量大于核心线程数，请求就会被放到队列中，等待核心线程处理，如果并发量很大，就会在队列里堆积大量任务，这样会降低请求的总体响应速度。所以 Tomcat并没有使用 JUC 原生线程池，利用 TaskQueue 的 offer() 方法巧妙的修改了 JUC 线程池的执行流程，改写后 Tomcat 线程池执行流程如下：</p>
+<blockquote>
+<ol>
+<li>判断如果当前线程数小于核心线程池，则新建一个线程来处理提交的任务</li>
+<li>如果当前当前线程池数大于核心线程池，小于最大线程数，则创建新的线程执行提交的任务</li>
+<li>如果当前线程数等于最大线程数，则将任务放入任务队列等待执行</li>
+<li>如果队列已满，则执行拒绝策略</li>
+</ol>
+</blockquote>
+<p>而且 Tomcat 会做核心线程预热，在创建好线程池后接着会去创建核心线程并启动，服务启动后就可以直接接受客户端请求进行处理了，避免了冷启动问题。</p>
+<h5 id="1、Tomcat自定义ThreadPoolExecutor"><a href="#1、Tomcat自定义ThreadPoolExecutor" class="headerlink" title="1、Tomcat自定义ThreadPoolExecutor"></a>1、Tomcat自定义ThreadPoolExecutor</h5><p>Tomcat自定义线程池继承于java.util.concurrent.ThreadPoolExecutor，并新增了一些成员变量来更高效地统计已经提交但尚未完成的任务数量（submittedCount），包括已经在队列中的任务和已经交给工作线程但还未开始执行的任务。</p>
+<h5 id="2、Tomcat自定义任务队列"><a href="#2、Tomcat自定义任务队列" class="headerlink" title="2、Tomcat自定义任务队列"></a>2、Tomcat自定义任务队列</h5><p>在Tomcat中重新定义了一个阻塞队列<code>TaskQueue</code>，它继承于<code>LinkedBlockingQueue</code>。在Tomcat中，核心线程数默认值为10，最大线程数默认为200，<strong>为了避免线程到达核心线程数后后续任务放入队列等待，Tomcat通过自定义任务队列<code>TaskQueue</code>重写offer方法实现了核心线程池数达到配置数后线程的创建。</strong></p>
+<h5 id="3、Tomcat自定义任务线程"><a href="#3、Tomcat自定义任务线程" class="headerlink" title="3、Tomcat自定义任务线程"></a>3、Tomcat自定义任务线程</h5><p>Tomcat中通过自定义任务线程<code>TaskThread</code>实现对每个线程创建时间的记录；使用静态内部类<code>WrappingRunnable</code>对Runnable进行包装，用于对<code>StopPooledThreadException</code>异常类型的处理。</p>
+<h5 id="4、Tomcat为什么要自定义线程池和任务队列实现？"><a href="#4、Tomcat为什么要自定义线程池和任务队列实现？" class="headerlink" title="4、Tomcat为什么要自定义线程池和任务队列实现？"></a>4、Tomcat为什么要自定义线程池和任务队列实现？</h5><p>JUC原生线程池在提交任务时，当工作线程数达到核心线程数后，继续提交任务会尝试将任务放入阻塞队列中，只有当前运行线程数未达到最大设定值且在任务队列任务满后，才会继续创建新的工作线程来处理任务，因此JUC原生线程池无法满足Tomcat快速响应的诉求。</p>
+<h5 id="5、Tomcat为什么使用无界队列？"><a href="#5、Tomcat为什么使用无界队列？" class="headerlink" title="5、Tomcat为什么使用无界队列？"></a>5、Tomcat为什么使用无界队列？</h5><p>Tomcat在EndPoint中通过acceptCount和maxConnections两个参数来避免过多请求积压。</p>
+<p>其中maxConnections为Tomcat在任意时刻接收和处理的最大连接数。</p>
+<p>当Tomcat接收的连接数达到maxConnections时，Acceptor不会读取accept队列中的连接；这时accept队列中的线程会一直阻塞着，直到Tomcat接收的连接数小于maxConnections（maxConnections默认为10000，如果设置为-1，则连接数不受限制）。acceptCount为accept队列的长度，当accept队列中连接的个数达到acceptCount时，即队列满，此时进来的请求一律被拒绝，默认值是100（基于Tomcat 8.5.43版本）。因此，通过acceptCount和maxConnections两个参数作用后，Tomcat默认的无界任务队列通常不会造成OOM。</p>
+<h2 id="执行任务"><a href="#执行任务" class="headerlink" title="执行任务"></a>执行任务</h2><ul>
+<li><code>execute</code>提交没有返回值，不能判断是否执行成功。只能提交一个Runnable的对象</li>
+<li><code>submit</code>会返回一个<code>Future</code>对象，通过Future的<code>get()</code>方法来获取返回值，submit提交线程可以<code>吃掉线程中产生的异常</code>，达到<code>线程复用</code>。当get()执行结果时异常才会抛出。原因是通过submit提交的线程，当发生异常时，会将异常保存，待<code>future.get()</code>时才会抛出。</li>
+</ul>
+<h2 id="关闭线程池"><a href="#关闭线程池" class="headerlink" title="关闭线程池"></a>关闭线程池</h2><ul>
+<li><code>shutdown()</code>：不再继续接收新的任务，执行完成已有任务后关闭</li>
+<li><code>shutdownNow()</code>：直接关闭，若果有任务尝试停止</li>
+</ul>
+<h2 id="线程池的状态"><a href="#线程池的状态" class="headerlink" title="线程池的状态"></a>线程池的状态</h2><p>线程池有这几个状态：RUNNING,SHUTDOWN,STOP,TIDYING,TERMINATED。</p>
+<p><img src="/%E7%BA%BF%E7%A8%8B%E6%B1%A0/16bf3b10e39a52d0tplv-t2oaga2asx-jj-mark3024000q75.webp" alt="img"></p>
+<h5 id="RUNNING"><a href="#RUNNING" class="headerlink" title="RUNNING"></a><strong>RUNNING</strong></h5><ul>
+<li>该状态的线程池会接收新任务，并处理阻塞队列中的任务;</li>
+<li>调用线程池的shutdown()方法，可以切换到SHUTDOWN状态;</li>
+<li>调用线程池的shutdownNow()方法，可以切换到STOP状态;</li>
+</ul>
+<h5 id="SHUTDOWN"><a href="#SHUTDOWN" class="headerlink" title="SHUTDOWN"></a><strong>SHUTDOWN</strong></h5><ul>
+<li>该状态的线程池不会接收新任务，但会处理阻塞队列中的任务；</li>
+<li>队列为空，并且线程池中执行的任务也为空,进入TIDYING状态;</li>
+</ul>
+<h5 id="STOP"><a href="#STOP" class="headerlink" title="STOP"></a><strong>STOP</strong></h5><ul>
+<li>该状态的线程不会接收新任务，也不会处理阻塞队列中的任务，而且会中断正在运行的任务；</li>
+<li>线程池中执行的任务为空,进入TIDYING状态;</li>
+</ul>
+<h5 id="TIDYING"><a href="#TIDYING" class="headerlink" title="TIDYING"></a><strong>TIDYING</strong></h5><ul>
+<li>该状态表明所有的任务已经运行终止，记录的任务数量为0。</li>
+<li>terminated()执行完毕，进入TERMINATED状态</li>
+</ul>
+<h5 id="TERMINATED"><a href="#TERMINATED" class="headerlink" title="TERMINATED"></a><strong>TERMINATED</strong></h5><ul>
+<li>该状态表示线程池彻底终止s</li>
+</ul>
+<h2 id="线程池出现异常会发生什么？"><a href="#线程池出现异常会发生什么？" class="headerlink" title="线程池出现异常会发生什么？"></a>线程池出现异常会发生什么？</h2><ul>
+<li>线程出现异常，线程会退出，并重新创建新的线程执行队列里任务，不能复用线程</li>
+<li>当业务代码的异常捕获了，线程就可以复用</li>
+<li>使用<code>ThreadFactory</code>的<code>UncaughtExceptionHandler</code>保证线程的所有异常都能捕获（包括业务的异常），兜底的.如果提交方式用<code>execute</code>，不能复用线程</li>
+<li><code>setUncaughtExceptionHandler+submit</code> ：可以吃掉异常并复用线程（是吃掉，不报错）</li>
+<li><code>setUncaughtExceptionHandler+submit+future.get()</code> ：可以获取到异常并复用线程</li>
+</ul>
+<p>任务执行异常丢失问题。可以通过下述4种方式解决</p>
+<blockquote>
+<ol>
+<li>在任务代码中增加 try、catch 异常处理</li>
+<li>如果使用的 Future 方式，则可通过 Future 对象的 get 方法接收抛出的异常</li>
+<li>为工作线程设置 <code>setUncaughtExceptionHandler</code>，在<code> uncaughtException()</code> 方法中处理异常</li>
+<li>可以重写 <code>afterExecute(Runnable r, Throwable t)</code> 方法，拿到异常 t</li>
+</ol>
+</blockquote>
+<h5 id><a href="#" class="headerlink" title></a><img src="/%E7%BA%BF%E7%A8%8B%E6%B1%A0/16bec33ca5559c93tplv-t2oaga2asx-jj-mark3024000q75.webp" alt="img"></h5><h2 id="使用线程池容易出现的问题"><a href="#使用线程池容易出现的问题" class="headerlink" title="使用线程池容易出现的问题"></a>使用线程池容易出现的问题</h2><h4 id="1、线程池默认使用无界队列，任务过多导致OOM"><a href="#1、线程池默认使用无界队列，任务过多导致OOM" class="headerlink" title="1、线程池默认使用无界队列，任务过多导致OOM"></a>1、线程池默认使用无界队列，任务过多导致OOM</h4><h4 id="2、线程池创建线程过多，导致OOM"><a href="#2、线程池创建线程过多，导致OOM" class="headerlink" title="2、线程池创建线程过多，导致OOM"></a>2、线程池创建线程过多，导致OOM</h4><h4 id="3、共享线程池，次要逻辑拖垮主要逻辑"><a href="#3、共享线程池，次要逻辑拖垮主要逻辑" class="headerlink" title="3、共享线程池，次要逻辑拖垮主要逻辑"></a>3、共享线程池，次要逻辑拖垮主要逻辑</h4><p>做线程池隔离</p>
+<h4 id="4、线程池拒绝策略的坑，使用不当导致阻塞"><a href="#4、线程池拒绝策略的坑，使用不当导致阻塞" class="headerlink" title="4、线程池拒绝策略的坑，使用不当导致阻塞"></a>4、线程池拒绝策略的坑，使用不当导致阻塞</h4><p>使用默认的拒绝策略</p>
+<h4 id="5、线程池异常处理的坑"><a href="#5、线程池异常处理的坑" class="headerlink" title="5、线程池异常处理的坑"></a>5、线程池异常处理的坑</h4><ul>
+<li>线程出现异常，线程会退出，并重新创建新的线程执行队列里任务，不能复用线程</li>
+<li>当业务代码的异常捕获了，线程就可以复用</li>
+<li>使用<code>ThreadFactory</code>的<code>UncaughtExceptionHandler</code>保证线程的所有异常都能捕获（包括业务的异常），兜底的.如果提交方式用<code>execute</code>，不能复用线程</li>
+<li><code>setUncaughtExceptionHandler+submit</code> ：可以吃掉异常并复用线程（是吃掉，不报错）</li>
+<li><code>setUncaughtExceptionHandler+submit+future.get()</code> ：可以获取到异常并复用线程</li>
+</ul>
+<h4 id="6、内部线程池的坑"><a href="#6、内部线程池的坑" class="headerlink" title="6、内部线程池的坑"></a>6、内部线程池的坑</h4><p>工作中，个别开发者，为了快速开发，喜欢直接用<code>spring</code>的<code>@Async</code>，来执行异步任务。Spring内部线程池，其实是<code>SimpleAsyncTaskExecutor</code>，这玩意有点坑，它<strong>不会复用线程的</strong>，它的设计初衷就是执行大量的短时间的任务。也就是说来了一个请求，就会新建一个线程！大家使用<code>spring</code>的<code>@Async</code>时，要避开这个坑，自己再定义一个线程池。</p>
+<h4 id="7、使用线程池时，没有自定义命名"><a href="#7、使用线程池时，没有自定义命名" class="headerlink" title="7、使用线程池时，没有自定义命名"></a>7、使用线程池时，没有自定义命名</h4><p>使用线程池时，如果没有给线程池一个有意义的名称，将不好排查回溯问题。这不算一个坑吧，只能说给以后排查埋坑</p>
+<h4 id="8、线程池参数设置不合理"><a href="#8、线程池参数设置不合理" class="headerlink" title="8、线程池参数设置不合理"></a>8、线程池参数设置不合理</h4><p>比如线程池如何调优，如何确认最佳线程数？</p>
+<h4 id="9、线程池使用完毕后，忘记关闭"><a href="#9、线程池使用完毕后，忘记关闭" class="headerlink" title="9、线程池使用完毕后，忘记关闭"></a>9、线程池使用完毕后，忘记关闭</h4><p>如果线程池使用完，忘记关闭的话，有可能会导致<strong>内存泄露</strong>问题。所以，大家使用完线程池后，记得关闭一下。同时，线程池最好也设计成单例模式，给它一个好的命名，以方便排查问题。</p>
+<h4 id="10、ThreadLocal与线程池搭配，线程复用，导致信息错乱。"><a href="#10、ThreadLocal与线程池搭配，线程复用，导致信息错乱。" class="headerlink" title="10、ThreadLocal与线程池搭配，线程复用，导致信息错乱。"></a>10、ThreadLocal与线程池搭配，线程复用，导致信息错乱。</h4><p>程序运行在 <code>Tomcat</code> 中，执行程序的线程是<code>Tomcat</code>的工作线程，而<code>Tomcat</code>的工作线程是基于<strong>线程池</strong>的</p>
+<p>线程池会重用固定的几个线程，一旦线程重用，那么很可能首次从 ThreadLocal 获取的值是之前其他用户的请求遗留的值。这时，ThreadLocal 中的用户信息就是其他用户的信息。</p>
+
+            </div>
+
+            <!-- Post Comments -->
+            
+    <!-- 使用 DISQUS_CLICK -->
+<div id="disqus-comment">
+    <div id="disqus_thread"></div>
+
+<!-- add animation -->
+<style>
+	.disqus_click_btn {
+            line-height: 30px;
+            margin: 0;
+            min-width: 50px;
+            padding: 0 14px;
+            display: inline-block;
+            font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0;
+            overflow: hidden;
+            will-change: box-shadow;
+            transition: box-shadow .2s cubic-bezier(.4, 0, 1, 1), background-color .2s cubic-bezier(.4, 0, .2, 1), color .2s cubic-bezier(.4, 0, .2, 1);
+            outline: 0;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            vertical-align: middle;
+            border: 0;
+            background: rgba(158, 158, 158, .2);
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+            color: #fff;
+            background-color: #7EC0EE;
+            text-shadow: 0
+        }
+</style>
+	
+<div class="btn_click_load" id="disqus_bt"> 
+    <button class="disqus_click_btn">点击查看评论</button>
+</div>
+
+<!--
+<script type="text/javascript">
+$('.btn_click_load').click(function() {
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'http-miccall-tech'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    document.getElementById('disqus_bt').style.display = "none";
+});
+</script>
+-->
+<script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'https://stress1110.github.io/%E7%BA%BF%E7%A8%8B%E6%B1%A0/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'https://stress1110.github.io/%E7%BA%BF%E7%A8%8B%E6%B1%A0/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+</script>
+
+<script type="text/javascript">
+    $('.btn_click_load').click(function() {  //click to load comments
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document;
+            var s = d.createElement('script');
+            s.src = '//http-miccall-tech.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', + new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+        $('.btn_click_load').css('display','none');
+    });
+</script>
+</div>
+<style>
+    #disqus-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+
+        </div>
+        <!-- Copyright 版权 start -->
+                <div id="copyright">
+            <ul>
+                <li>&copy;Powered By <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/" style="border-bottom: none;">hexo</a></li>
+                <li>Design: <a target="_blank" rel="noopener" href="http://miccall.tech " style="border-bottom: none;">miccall</a></li>
+            </ul>
+            
+                <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+			
+        </div>
+    </div>
+</body>
+
+
+
+ 	
+</html>
